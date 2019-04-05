@@ -38,3 +38,21 @@ Uma plataforma para envio e gerenciamento de currículos.
  5 - $user->password = 'senha'
  5 - $user->save()
 ```
+## Execução do Container
+
+* Construa o container da aplicação com o Docker Compose, utilizando o seguinte comando:
+```
+ docker-compose build
+```
+* Após a construção do container, já podemos iniciar a execução com o comando:
+```
+ docker-compose up -d
+```
+* Para finalizar, execute o comando:
+```
+ docker-compose exec web composer update
+```
+Você pode testar se o container está funcionando, acessando o caminho:
+```
+ localhost:8000
+```
