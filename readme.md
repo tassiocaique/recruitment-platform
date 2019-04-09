@@ -44,14 +44,38 @@ Uma plataforma para envio e gerenciamento de currículos.
 ```
  docker-compose build
 ```
-* Após a construção do container, já podemos iniciar a execução com o comando:
+* Após a construção do container, já podemos iniciar a execução:
 ```
  docker-compose up -d
 ```
-* Para finalizar, execute o comando:
+* Crie o arquivo .env, copiando o aquivo .env.example e altere as seguintes informações:
 ```
- docker-compose exec web composer update
+DB_CONNECTION=mongodb
+DB_HOST=10.0.0.12
+DB_PORT=27017
+DB_DATABASE=recruitment-platform-2019-03
+DB_USERNAME=
+DB_PASSWORD=
 ```
+* A seguir, é necessário entrar como bash e gerar a chave de aplicação:
+```
+docker-compose exec web bash
+php artisan key:g
+```
+* Libere as permissões de grupo para as pastas storage e vendor:
+```
+chown www-data storage vendor -R
+```
+* Ainda como bash, atualize o composer:
+```
+composer update
+```
+* Por fim, instale as dependências necessárias para a execução da aplicação e construa a aplicação:
+```
+npm install
+npm run watch
+```
+* 
 Você pode testar se o container está funcionando, acessando o caminho:
 ```
  localhost:8000
