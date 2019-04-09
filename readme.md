@@ -75,8 +75,7 @@ composer update
 npm install
 npm run watch
 ```
-* 
-Você pode testar se o container está funcionando, acessando o caminho:
+* Você pode testar se o container está funcionando, acessando o caminho:
 ```
  localhost:8000
 ```
