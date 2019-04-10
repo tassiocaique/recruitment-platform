@@ -48,15 +48,9 @@ Uma plataforma para envio e gerenciamento de currículos.
 ```
  docker-compose up -d
 ```
-* Crie o arquivo .env, copiando o aquivo .env.example e altere as seguintes informações:
-```
-DB_CONNECTION=mongodb
-DB_HOST=10.0.0.12
-DB_PORT=27017
-DB_DATABASE=recruitment-platform-2019-03
-DB_USERNAME=
-DB_PASSWORD=
-```
+* Crie o arquivo .env, copiando o aquivo .env.example e configure com o endereço do host do seu banco de dados
+e as informações pertinentes a ele.
+
 * A seguir, é necessário entrar como bash e gerar a chave de aplicação:
 ```
 docker-compose exec web bash
