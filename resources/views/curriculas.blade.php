@@ -1,15 +1,14 @@
-<section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
-    <div class="page-content">
-        <div class="mdl-grid pd-tb-60 not-archived-section">
-            @include('card-section', ['profiles' => $not_archived])
-        </div>
-    </div>      
-</section>
-<section class="mdl-layout__tab-panel" id="scroll-tab-2">
-    <div class="page-content">
-        <div class="mdl-grid pd-tb-60 archived-section">
-            @include('card-section', ['profiles' => $archived])
-        </div>
-    </div> 
-</section>
-            
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Whatever Page</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>

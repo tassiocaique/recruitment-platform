@@ -12,33 +12,7 @@ class CurriculumController extends Controller
 {
 	public function index(Request $in)
 	{
-		$archived = $not_archived = [];
-		if ( !$in->not_archived ) {
-			$archived = Profile::where('archived', true)->orderBy('star', 'desc')->get();
-
-		}
-		if ( !$in->archived ) {
-			$not_archived = Profile::where('archived', '!=', true)->orderBy('star', 'desc')->get();
-		}
-
-		foreach ($archived as $i => $profile) {
-			$profile->_id = encrypt($profile->_id);
-			$profile->tag = $this->listTag($profile->_id)['tag'];
-		}
-		foreach ($not_archived as $i => $profile) {
-			$profile->_id = encrypt($profile->_id);
-			$profile->tag = $this->listTag($profile->_id)['tag'];
-		}
-
-		if ($in->archived) {
-			return view('card-section', ['profiles' => $archived]);
-		}
-		elseif ($in->not_archived) {
-			return view('card-section', ['profiles' => $not_archived]);
-		}
-		else {
-			return view('list-curriculas', ['archived' => $archived, 'not_archived' => $not_archived]);
-		}
+		return view('curriculas');
 	}
 
 	public function show($id)
