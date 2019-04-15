@@ -22,6 +22,9 @@ Route::get('curriculum/{id}/tag', 'CurriculumController@listTag')->middleware('a
 Route::post('curriculum/{id}/rating', 'CurriculumController@updateStar')->middleware('auth');
 Route::post('curriculum/{id}/archive', 'CurriculumController@archive')->middleware('auth');
 Route::post('curriculum/{id}/restore', 'CurriculumController@restore')->middleware('auth');
-Route::resource('curriculum', 'CurriculumController')->middleware('auth');
+
+Route::get('curriculum/{path}', 'CurriculumController@index');
+
+//Route::resource('curriculum', 'CurriculumController')->middleware('auth');
 
 Route::resource('/', 'HomeController');
