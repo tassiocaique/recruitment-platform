@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
-        <h1>Página de Currículos</h1>
+    <v-app>
         <div class="container">
-            <router-view></router-view>
+            <h1>Página de Currículos</h1>
+                <router-view></router-view>
         </div>
-    </div>
+    </v-app>
 </template>
 
 <script>
