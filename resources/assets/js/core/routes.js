@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Curriculum from '../features/curriculas/components/CurriculumComponent'
-import SentCurricula from '../features/curriculas/pages/sentCurricula'
+import SentCurricula from '../features/curriculas/pages/SentCurricula'
 
 const router = new VueRouter({
     mode: 'history',
@@ -13,7 +13,7 @@ const router = new VueRouter({
             path: '/curriculum',
             children: [
                 {
-                    path: 'sentCurricula',
+                    path: 'SentCurricula',
                     component: SentCurricula,
                 }
             ],
