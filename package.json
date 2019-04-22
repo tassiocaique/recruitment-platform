@@ -15,13 +15,19 @@
     "browser-sync": "^2.23.7",
     "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^5.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.1",
+    "eslint-plugin-vue": "^5.2.2",
     "jquery": "^3.3.1",
     "laravel-mix": "^2.0",
     "lodash": "^4.17.4",
     "popper.js": "^1.12",
-    "vue": "^2.5.7"
+    "vue": "^2.5.7",
+    "vue-eslint-parser": "^6.0.3"
   },
   "dependencies": {
+    "babel-eslint": "^10.0.1",
     "dialog-polyfill": "^0.4.9",
     "jquery": "^3.3.1",
     "jquery-bar-rating": "^1.2.2",
