@@ -14,10 +14,13 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import Vuetify from 'vuetify';
+import App from './App';
+import Routes from './core/routes.js';
+import 'vuetify/dist/vuetify.min.css';
 
-import App from './App'
+Vue.use(Vuetify);
 
-import Routes from './core/routes.js'
 
 const app = new Vue({
     el: '#app',
