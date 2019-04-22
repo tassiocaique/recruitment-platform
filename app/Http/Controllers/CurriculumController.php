@@ -106,4 +106,12 @@ class CurriculumController extends Controller
 		$profile->archived = false;
 		$profile->save();
 	}
+
+	public function list(Request $in)
+	{
+		$archived = Profile::all();
+		return response()->json([
+			'archived' => $archived
+		]);
+	}
 }
