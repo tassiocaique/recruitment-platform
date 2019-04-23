@@ -7,13 +7,13 @@
                     <v-card-text class="subheader green--text text--lighten-3 ma-0 pa-0"> {{ card.role }} - Submetido em {{ card.submissionDate }} </v-card-text>
                 </v-layout>
                 <v-spacer></v-spacer>
-                <v-btn icon>
+                <v-btn icon @click.prevent="$emit('download-pdf-curriculum', card.id)">
                     <v-icon> save_alt </v-icon>
                 </v-btn>
-                <v-btn icon>
+                <v-btn icon @click.prevent="$emit('schedule-curriculum', card.id)">
                     <v-icon> calendar_today </v-icon>
                 </v-btn>
-                <v-btn icon>
+                <v-btn icon @click.prevent="$emit('archive-curriculum', card.id)">
                     <v-icon> archive </v-icon>
                 </v-btn>
             </v-card-title>
@@ -67,7 +67,7 @@
                 <v-input
                     class="grey--text"
                 >
-                    <slot name="prepend">
+                    <slot name="prepend" v-if="curriculaHasLinkedin">
                         <v-icon color="grey">fab fa-linkedin</v-icon>
                     </slot>
                     <v-container 
@@ -148,6 +148,12 @@ export default {
 
         curriculaHasGithub () {
             if (this.card.github) {
+                return true;
+            } else return false;
+        },
+
+        curriculaHasLinkedin () {
+            if (this.card.linkedin) {
                 return true;
             } else return false;
         },
