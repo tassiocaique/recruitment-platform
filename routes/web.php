@@ -23,7 +23,7 @@ Route::get('curriculum/{id}/tag', 'CurriculumController@listTag')->middleware('a
 Route::post('curriculum/{id}/rating', 'CurriculumController@updateStar')->middleware('auth');
 Route::post('curriculum/{id}/archive', 'CurriculumController@archive')->middleware('auth');
 Route::post('curriculum/{id}/restore', 'CurriculumController@restore')->middleware('auth');
-Route::get('curriculum/{id}/show', 'CurriculumController@show')->middleware('auth');
+Route::get('curriculum/{id}/pdf', 'CurriculumController@getCurriculumPDF')->middleware('auth');
 Route::resource('curriculum', 'CurriculumController')->middleware('auth');
 
 Route::resource('/', 'HomeController');
