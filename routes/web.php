@@ -25,6 +25,4 @@ Route::post('curriculum/{id}/restore', 'CurriculumController@restore')->middlewa
 
 Route::get('curriculum/{path}', 'CurriculumController@index');
 
-//Route::resource('curriculum', 'CurriculumController')->middleware('auth');
-
 Route::resource('/', 'HomeController');
