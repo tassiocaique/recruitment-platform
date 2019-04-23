@@ -18,8 +18,22 @@ import Vuetify from 'vuetify';
 import App from './App';
 import Routes from './core/routes.js';
 import 'vuetify/dist/vuetify.min.css';
+import PageHeader from './core/components/PageHeader';
 
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+    theme: {
+    primary: '#315199',
+    secondary: '#1CA3F3',
+    accent: '#8c9eff',
+    error: '#b71c1c',
+    internship: '#009D4D',
+    contract: '#0277BD',
+    sliderColor: '#1CA3F3',
+    },
+
+});
+
+Vue.component('page-header', PageHeader);
 
 
 const app = new Vue({
