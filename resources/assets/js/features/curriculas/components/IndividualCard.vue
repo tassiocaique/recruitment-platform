@@ -83,7 +83,11 @@
                 ca-1
                 >
                 <v-layout align-center justify-center row fill-height>
-                    <v-rating v-model="card.stars"></v-rating>
+                    <v-rating 
+                        v-model="card.stars" 
+                        background-color="grey" 
+                        color="yellow darken-1"
+                        hover></v-rating>
                 </v-layout>
                 </v-flex>
             </v-layout>
