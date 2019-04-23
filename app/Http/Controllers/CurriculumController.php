@@ -15,7 +15,7 @@ class CurriculumController extends Controller
 		return view('curriculas');
 	}
 
-	public function show($id)
+	public function getCurriculumPDF($id)
 	{
 		//mostra o currículo
 		$profile = Profile::find(decrypt($id));
@@ -105,5 +105,18 @@ class CurriculumController extends Controller
 		$profile = Profile::find(decrypt($id));
 		$profile->archived = false;
 		$profile->save();
+	}
+
+	public function list(Request $in)
+	{
+		$curricula = Profile::where('archived', $in->archived == 'true'? true : false)
+			->get();
+
+		foreach ($curricula as $i => $profile) {
+			$profile->_id = encrypt($profile->_id);
+			$profile->tag = $this->listTag($profile->_id)['tag'];
+		}
+		
+		return response()->json($curricula);
 	}
 }
