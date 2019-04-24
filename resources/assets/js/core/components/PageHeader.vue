@@ -21,7 +21,6 @@
 
 		<template v-slot:extension>
 			<v-tabs
-				v-model="model"
 				color="primary"
 				slider-color="sliderColor"
 			>
