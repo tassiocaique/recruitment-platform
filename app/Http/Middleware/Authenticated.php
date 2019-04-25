@@ -15,7 +15,7 @@ class Authenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (auth()->guest()) {
+        if (auth()->guard($guard)->guest()) {
             return redirect(action('LoginController@index'));
         }
 
