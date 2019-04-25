@@ -14,7 +14,10 @@
 			{{ name }}
 		</v-toolbar-title>
 
-		<v-btn class="mr-4" icon>
+		<v-btn
+			class="mr-4"
+			icon
+		>
 			<v-icon color="white">
 				logout
 			</v-icon>
