@@ -14,7 +14,6 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/login.js', 'public/js/login.js');
 mix.js('resources/assets/js/insert.js', 'public/js/insert.js');
 mix.js('resources/assets/js/mask-tel.js', 'public/js/mask-tel.js');
-mix.js('resources/assets/js/search.js', 'public/js/search.js');
 mix.js('resources/assets/js/app.js', 'public/js/app.js');
 
 mix.copy([
