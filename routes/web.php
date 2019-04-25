@@ -30,7 +30,7 @@ Route::get('{path}', function () {
     if (Auth::user()) {
         return view('curriculas', ['user'=>Auth::user()]);
     }
-    return redirect('login');
+    return redirect('auth');
 })->where('path', '(.*)');
 
 Route::resource('/', 'HomeController');
