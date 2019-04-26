@@ -50,5 +50,6 @@ COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
 
 COPY entrypoint.sh /entrypoint.sh
 
+chmod -x entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 WORKDIR /home/project-folder
