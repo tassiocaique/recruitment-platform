@@ -1,19 +1,19 @@
 <template>
-    <v-card class="ma-0 pa-0">
+    <v-card class="ma-0 pa-0 mt-4 mx-5">
         <v-card class="ma-0 pa-0" flat :color="headerBackgroundColor" dark>
             <v-card-title>
                 <v-layout column align-start  class="ma-0 pa-0">
                     <v-card-text class="headline ma-0 pa-0"> {{ card.name }} </v-card-text>
-                    <v-card-text class="subheader green--text text--lighten-3 ma-0 pa-0"> {{ card.role }} - Submetido em {{ card.submissionDate }} </v-card-text>
+                    <v-card-text class="subheader green--text text--lighten-3 ma-0 pa-0"> {{ returnRole }} - Submetido em {{ returnFormatedDate }} </v-card-text>
                 </v-layout>
                 <v-spacer></v-spacer>
-                <v-btn icon @click.prevent="$emit('download-pdf-curriculum', card.id)">
+                <v-btn icon @click.prevent="$emit('download-pdf-curriculum', card._id)">
                     <v-icon> save_alt </v-icon>
                 </v-btn>
-                <v-btn icon @click.prevent="$emit('schedule-curriculum', card.id)">
+                <v-btn icon @click.prevent="$emit('schedule-curriculum', card._id)">
                     <v-icon> calendar_today </v-icon>
                 </v-btn>
-                <v-btn icon @click.prevent="$emit('archive-curriculum', card.id)">
+                <v-btn icon @click.prevent="$emit('archive-curriculum', card._id)">
                     <v-icon> archive </v-icon>
                 </v-btn>
             </v-card-title>
@@ -35,7 +35,7 @@
                         class="ml-3 pa-0"
                         
                     >
-                        <a :href="redirectPhone">{{ card.phone }}</a> 
+                        <a :href="redirectPhone">{{ returnMaskedPhone }}</a> 
                     </v-container>
                 </v-input>
                 <v-input
@@ -61,7 +61,11 @@
                         fluid 
                         class="ml-3 pa-0"
                     > 
-                        <a :href="returnGithub"> {{ card.github }} </a> 
+                        <a :href="card.github"
+                            target="_blank"
+                        >
+                            {{ card.github }}
+                        </a>
                     </v-container>
                 </v-input>
                 <v-input
@@ -74,7 +78,11 @@
                         fluid 
                         class="ml-3 pa-0"
                     > 
-                        <a :href="returnLinkedin"> {{ card.linkedin }} </a> 
+                        <a :href="card.linkedin"
+                            target="_blank"
+                        >
+                            {{ card.linkedin }}
+                        </a>
                     </v-container>
                 </v-input>
                 </v-flex>
@@ -83,11 +91,12 @@
                 ca-1
                 >
                 <v-layout align-center justify-center row fill-height>
-                    <v-rating 
-                        v-model="card.stars" 
-                        background-color="grey" 
+                    <v-rating
+                        v-model="card.star"
+                        background-color="grey"
                         color="yellow darken-1"
-                        hover></v-rating>
+                        hover
+                    />
                 </v-layout>
                 </v-flex>
             </v-layout>
@@ -96,7 +105,7 @@
             class="ma-0 pa-0"
             background-color="#EFEBE9"
             v-model="chips"
-            :items="card.tags"
+            :items="card.tag"
             label="Adicionar Tags"
             chips
             append-icon="add_circle"
@@ -142,7 +151,7 @@ export default {
 
     computed: {
         headerBackgroundColor () {
-            if (this.card.role == "Estágio") {
+            if (this.returnRole == "Estágio") {
                 return "#009D4D";
             }
             else {
@@ -170,18 +179,25 @@ export default {
             return "mailto:" + this.card.email;
         },
 
-        returnGithub () {
-            return "https://github.com" + this.card.github;
+        returnRole () {
+            if(this.card.internship) {
+                return 'Estágio';
+            }
+            return 'Contrato';
         },
 
-        returnLinkedin () {
-            return "https://www.linkedin.com" + this.card.linkedin;
+        returnFormatedDate () {
+            return '14/01/2019';
+        },
+
+        returnMaskedPhone () {
+            return '(87) 98812-1212';
         }
     },
 
     data() {
         return {
-            chips: [...this.card.tags],
+            chips: [...this.card.tag],
         };
     },
     
