@@ -4,6 +4,7 @@
 		tabs
 	>
 		<img
+			class="mx-4"
 			src="https://sysvale.com/img/sysvale-white.svg"
 			width="146"
 		>
@@ -13,7 +14,10 @@
 			{{ name }}
 		</v-toolbar-title>
 
-		<v-btn icon>
+		<v-btn
+			class="mr-4"
+			icon
+		>
 			<v-icon color="white">
 				logout
 			</v-icon>
@@ -21,6 +25,7 @@
 
 		<template v-slot:extension>
 			<v-tabs
+				class="ml-4"
 				color="primary"
 				slider-color="sliderColor"
 			>
