@@ -12,11 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/login.js', 'public/js/login.js');
-mix.js('resources/assets/js/modal.js', 'public/js/modal.js');
 mix.js('resources/assets/js/insert.js', 'public/js/insert.js');
-mix.js('resources/assets/js/list.js', 'public/js/list.js');
 mix.js('resources/assets/js/mask-tel.js', 'public/js/mask-tel.js');
-mix.js('resources/assets/js/search.js', 'public/js/search.js');
 mix.js('resources/assets/js/app.js', 'public/js/app.js');
 
 mix.copy([
@@ -28,8 +25,6 @@ mix.copy([
 ], 'public/lib/js');
 
 mix.styles('resources/assets/css/insert.css', 'public/css/insert.css');
-mix.styles('resources/assets/css/list.css', 'public/css/list.css');
-mix.styles('resources/assets/css/all.css', 'public/css/all.css');
 mix.styles('resources/assets/css/utils.css', 'public/css/utils.css');
 mix.styles('resources/assets/css/login.css', 'public/css/login.css').version();
 
